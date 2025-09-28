@@ -1,0 +1,12 @@
+-- 2. 會員管理
+CREATE TABLE members (
+  member_id INT AUTO_INCREMENT PRIMARY KEY,
+  member_name VARCHAR(50) NOT NULL,
+  member_mail VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  create_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  plan_id INT,
+  FOREIGN KEY (plan_id) REFERENCES plans(plan_id)
+    ON UPDATE CASCADE
+    ON DELETE SET NULL
+) ENGINE=InnoDB;

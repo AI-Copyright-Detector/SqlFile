@@ -1,0 +1,10 @@
+-- 4. 比對管理
+CREATE TABLE comparisons (
+  compare_id INT AUTO_INCREMENT PRIMARY KEY,
+  file_id INT,
+  compared_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  result VARCHAR(20) NOT NULL,
+  similarity FLOAT NOT NULL,
+  external BOOLEAN NOT NULL DEFAULT 0,
+  message VARCHAR(255)
+) ENGINE=InnoDB;
