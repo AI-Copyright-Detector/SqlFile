@@ -1,6 +1,6 @@
 
 #使用前要先pip install google-api-python-client，然後要去google cloud platform申請YouTube Data API v3金鑰
-rom googleapiclient.discovery import build
+from googleapiclient.discovery import build
 
 API_KEY = ''  # 請填入你自己的 API 金鑰
 youtube = build('youtube', 'v3', developerKey=API_KEY)
@@ -28,3 +28,4 @@ def search_youtube(keyword, max_results=5):
 if __name__ == '__main__':
     keyword = input('請輸入搜尋關鍵字: ')
     search_youtube(keyword)
+
